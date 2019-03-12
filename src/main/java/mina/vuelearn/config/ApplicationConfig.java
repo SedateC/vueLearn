@@ -15,6 +15,11 @@ public class ApplicationConfig {
     * */
     @Bean
     public MultipartConfigElement multipartConfigElement() {
+        /*
+        * 或者配置文件中
+        * spring.servlet.multipart.max-file-size=128KB
+          spring.servlet.multipart.max-request-size=128KB
+        * */
         MultipartConfigFactory factory = new MultipartConfigFactory();
         factory.setMaxFileSize(DataSize.ofMegabytes(10));//MB
         factory.setMaxRequestSize(DataSize.ofMegabytes(1000));/*1000MB*/
